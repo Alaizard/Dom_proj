@@ -5,11 +5,11 @@ var passportFacebook = require('../passport/facebook');
 var passportGoogle = require('../passport/google');
 var passportAmazon = require('../passport/amazon');
 
+//  Set up Facebook auth routes
 router.get('/auth/facebook', passportFacebook.authenticate('facebook'));
 
 router.get('/auth/facebook/callback',
 passport.authenticate('facebook', { failureRedirect: '/login' }),
-// Redirect user back to the mobile router using Linking with a custom protocol OAuthLogin
 (req, res) => res.redirect('/'));
 
 // Set up Google auth routes
