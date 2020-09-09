@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "testing",
-    "slug": "testing",
+    "name": "dominate",
+    "slug": "dominate",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
