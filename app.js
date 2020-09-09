@@ -10,10 +10,6 @@ const { Pool, Client} = require("pg")
 app.listen(process.env.PORT, () => console.log(`Serve is running on port ${process.env.PORT}`))
 // passport.serializeUser((user, done) => done(null, user));
 // passport.deserializeUser((user, done) => done(null, user));
-console.log(process.env.DATABASE_NAME)
-console.log(process.env.NODE_ENV)
-console.log(process.env.PORT)
-
 
 // Initialize Passport
 app.use(helmet());
