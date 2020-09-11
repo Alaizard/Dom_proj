@@ -30,6 +30,12 @@ passport.authenticate('amazon', { failureRedirect: '/login' }),
 (req, res) => res.redirect('/'));
 
 router.post('/signup', (req, res) => {
+    User.findOne(req.body.email).then((user) => {
+        if (user) {
+            throw("That email already exists")
+        }
+    })
+
     if (req.err) {
         throw(error)
     } else {
@@ -40,6 +46,7 @@ router.post('/signup', (req, res) => {
 
         })
     }
+    // jwt.sign
 })
 
 module.exports = router;
