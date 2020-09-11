@@ -1,5 +1,5 @@
 import AsyncStorage from '@react-native-community/async-storage'
-import * as APIUtil from '../util/api.js'
+import * as APIUtil from '../util/session.js'
 
 // App Imports
 // import { routeApi } from '../../../setup/routes'
@@ -49,9 +49,10 @@ export const logout = () => ({
 export const register = payload => async dispatch => {
   dispatch(registerRequest())
   try {
-    await APIUtil.registerResponse({
+    await APIUtil.register({
       payload
     })
+    await dispatch(registerResponse(payload))
 
     await dispatch(login(payload))
   } catch (error) {

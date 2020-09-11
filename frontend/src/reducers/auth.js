@@ -1,4 +1,4 @@
-import { REGISTER_REQUEST, REGISTER_USER, SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT } from './actions'
+import { REGISTER_REQUEST, REGISTER_RESPONSE, SET_USER, LOGIN_REQUEST, LOGIN_RESPONSE, LOGOUT } from './actions'
 
 // Initial State
 export const userInitialState = {
@@ -21,22 +21,22 @@ export default (state = userInitialState, action) => {
         return {
             ...state,
             isLoading: false,
-            isAuthenticated: action.isAuthenticated,
-            details: action.user
+            isAuthenticated: action.payload.isAuthenticated,
+            details: action.payload
         }
 
     case SET_USER:
       return {
         ...state,
-        isAuthenticated: !isEmpty(action.user),
-        details: action.user
+        isAuthenticated: !isEmpty(action.payload),
+        details: action.payload
       }
 
     case LOGIN_REQUEST:
       return {
         ...state,
         error: null,
-        isLoading: action.isLoading
+        isLoading: action.payload.isLoading
       }
 
     case LOGIN_RESPONSE:

@@ -1,9 +1,12 @@
-var express = require('express');
-var router = express.Router();
-var passport = require('passport')
-var passportFacebook = require('../passport/facebook');
-var passportGoogle = require('../passport/google');
-var passportAmazon = require('../passport/amazon');
+const express = require('express');
+const router = express.Router();
+const passport = require('passport')
+const passportFacebook = require('../passport/facebook');
+const passportGoogle = require('../passport/google');
+const passportAmazon = require('../passport/amazon');
+const crypto = require('crypto')
+const jwt = require('jsonwebtoken')
+
 
 //  Set up Facebook auth routes
 router.get('/auth/facebook', passportFacebook.authenticate('facebook'));
@@ -25,5 +28,18 @@ router.get('/auth/amazon', passportAmazon.authenticate('amazon'));
 router.get('/auth/amazon/callback',
 passport.authenticate('amazon', { failureRedirect: '/login' }),
 (req, res) => res.redirect('/'));
+
+router.post('/signup', (req, res) => {
+    if (req.err) {
+        throw(error)
+    } else {
+        let newUser = new User({
+            email: req.body.email,
+            name: req.body.name,
+            password: req.body.password
+
+        })
+    }
+})
 
 module.exports = router;
