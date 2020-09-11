@@ -7,7 +7,7 @@ const morgan = require("morgan")
 const path = require('path')
 const app = express();
 const { Pool, Client} = require("pg")
-app.listen(process.env.PORT, () => console.log(`Serve is running on port ${process.env.PORT}`))
+app.listen(process.env.PORT, () => console.log(`Server is running on port ${process.env.PORT}`))
 // passport.serializeUser((user, done) => done(null, user));
 // passport.deserializeUser((user, done) => done(null, user));
 
@@ -21,7 +21,7 @@ app.use(passport.session());
 app.use("/", router)
 
 const client = new Client({
-  user: process.env.DATABASE_USER,
+  username: process.env.DATABASE_USER,
   host: process.env.DATABSE_HOST,
   database: process.env.DATABSE_NAME,
   password: process.env.DATABASE_PASSWORD,
