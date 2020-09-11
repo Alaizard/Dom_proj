@@ -1,12 +1,13 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "server": "nodemon app.js",
+    "server": "cd backend && npm run start",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
     "web": "expo start --web",
-    "eject": "expo eject"
+    "eject": "expo eject",
+    "dev": "concurrently \"npm run server\" \"npm run start\""
   },
   "dependencies": {
     "dotenv": "^8.2.0",

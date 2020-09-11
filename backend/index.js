@@ -1,6 +1,6 @@
 const dotenv = require('dotenv').config();
 const express = require('express')
-const router = require("./backend/config/routes/auth")
+const router = require("./config/routes/auth")
 const passport = require('passport')
 const helmet = require("helmet");
 const morgan = require("morgan")
@@ -26,6 +26,7 @@ const client = new Client({
   database: process.env.DATABSE_NAME,
   password: process.env.DATABASE_PASSWORD,
   port: process.env.DATABASE_PORT,
+  dialect: process.env.DATABASE_DIALECT,
   idleTimeoutMillis: 0,
   connectionTimeoutMillis: 0
 })
