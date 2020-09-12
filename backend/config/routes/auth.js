@@ -4,7 +4,7 @@ const passport = require('passport')
 const passportFacebook = require('../passport/facebook');
 const passportGoogle = require('../passport/google');
 const passportAmazon = require('../passport/amazon');
-const crypto = require('crypto')
+// const crypto = require('crypto')
 const jwt = require('jsonwebtoken')
 
 
