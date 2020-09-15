@@ -18,9 +18,12 @@
   },
   "dependencies": {
     "cookie-session": "^1.4.0",
+    "events": "^3.2.0",
     "express": "^4.17.1",
     "express-session": "^1.17.1",
+    "http": "0.0.1-security",
     "jsonwebtoken": "^8.5.1",
+    "net": "^1.0.2",
     "passport": "^0.4.1",
     "passport-amazon": "^1.0.0",
     "passport-facebook": "^3.0.0",
@@ -28,6 +31,7 @@
     "passport-google-oauth20": "^2.0.0",
     "pg": "^8.3.3",
     "pgtools": "^0.3.0",
-    "react-native-dotenv": "^2.4.0"
+    "react-native-dotenv": "^2.4.0",
+    "tls": "0.0.1"
   }
 }

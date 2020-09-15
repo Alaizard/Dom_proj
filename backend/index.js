@@ -1,4 +1,4 @@
-const dotenv = require('dotenv').config();
+// const dotenv = require('dotenv').config();
 const express = require('express')
 const router = require("./config/routes/auth")
 const passport = require('passport')
@@ -20,13 +20,21 @@ app.use(passport.initialize());
 app.use(passport.session());
 app.use("/", router)
 
+const DATABASE_USER = "jay"
+const DATABASE_PASSWORD = "Pheonix1992"
+const DATABASE_NAME = "dominate"
+const DATABASE_PORT = 5432
+const DATABASE_HOST = "localhost"
+const DATABASE_DIALECT = "postgres"
+
+
 const client = new Client({
-  username: process.env.DATABASE_USER,
-  host: process.env.DATABSE_HOST,
-  database: process.env.DATABSE_NAME,
-  password: process.env.DATABASE_PASSWORD,
-  port: process.env.DATABASE_PORT,
-  dialect: process.env.DATABASE_DIALECT,
+  username: DATABASE_USER,
+  host: DATABASE_HOST,
+  database: DATABASE_NAME,
+  password: DATABASE_PASSWORD,
+  port: DATABASE_PORT,
+  dialect: DATABASE_DIALECT,
   idleTimeoutMillis: 0,
   connectionTimeoutMillis: 0
 })
